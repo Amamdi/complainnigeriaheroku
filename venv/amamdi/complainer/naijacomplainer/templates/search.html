@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Complain Nigeria-View Complaint</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/css2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css3/style.css">
+    <link rel="stylesheet" href="/static/css2/bootstrap.min.css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <style>
+        #one:hover{
+        color: #ea4335 !important;
+        }
+    </style>
+</head>
+<body>
+ <div class="half">
+     <div class="bg order-1 order-md-2" style="background-image: url('/static/images/babatunde-olajide-jcQdBcW7Tmw-unsplash.jpg');background-size:cover;"><div style="padding-left:15px;padding-top:15px;"><a href="{% url 'logout' %}" style="text-decoration:none;color:darkorange;" id="one">Back</a></div><p style="padding-top: 40px;color:white;font-size:30px;text-align:center;font-weight:bold;">View Complaints</p></div>
+    <div class="order-2 order-md-1">
+    <div class="contents" style="background:none">
+<br/>
+<form action="{% url 'naijacomplainer:searchposts' %}" method="GET" value="{{request.GET.q}}">
+<div class="text-center my-3 d-block">
+ <input type="text" name="q" value="{{request.GET.q}}" placeholder="View complaints"/>
+<input type="submit" name="submit" value="Search"/>
+</div>
+</form>
+
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+{% if results %}
+<h1>Results for <b>{{ request.GET.q }}</b></h1>
+
+<br/><br/>
+
+       <div class="container-fluid">
+<table class="table table-striped table-bordered table-responsive-sm responsive table-responsive-md table-responsive-lg">
+    <thead class="thead-dark">
+    <tr>
+        <th>Date</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>State</th>
+        <th>Complaint is Against</th>
+        <th>Nature of Complaint</th>
+        <th>Complaint</th>
+
+    </tr>
+    </thead>
+    <tbody>
+{% for result in results %}
+
+    <tr>
+        <td>{{ result.date }}</td>
+        <td>{{ result.firstname }}</td>
+        <td>{{ result.lastname }}</td>
+        <td>{{ result.state }}</td>
+        <td>{{ result.complaintIsAgainst }}</td>
+        <td>{{ result.natureOfComplaint }}</td>
+        <td>{{ result.complaint }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+</div>
+<!--{% for result in results %}-->
+
+
+<!--{{result.date}}-->
+<!--<br/>-->
+
+<!--{{result.firstname}}-->
+<!--<br/>-->
+
+<!--{% endfor %}-->
+{% else %}
+No search results for this query
+{% endif %}
+{% endif %}
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Complain Nigeria-Successful Submission</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="/static/css4/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css2/style.css">
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!--<style>-->
+<!--&lt;!&ndash;    body {background-image: url('/static/images/gettyimages-1033406274-612x612.jpg');background-size:cover;}&ndash;&gt;-->
+<!--</style>-->
+</head>
+<body>
+<div class="d-md-flex half">
+<div class="bg" style="background-image: url('/static/images/gettyimages-1033406274-612x612.jpg')"></div>
+<div class="order-2 order-md-1" style="margin-left: 190px;">
+<div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
+    <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+    <span class="swal2-success-line-tip"></span>
+    <span class="swal2-success-line-long"></span>
+    <div class="swal2-success-ring"></div>
+    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+</div>
+<h1 style="text-align:center">Complaint submitted successfully</h1><br>
+    <div style="text-align:center">
+
+    <p><a href="{% url 'chart' %}" style="text-decoration:none;">Complaints summary</a></p><br>
+    <p class="mb-3 mb-sm-0"><a href="{% url 'index2' %}" style="text-decoration:none;">Back</a></p><br>
+    <p class="sl-auto" style="margin-top: 10px;"><a href="{% url 'logout' %}" style="text-decoration:none;">Log Out</a></p>
+
+    </div>
+</div>
+</div>
+
+<!--  <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>-->
+
+
+</body>
+</html>
