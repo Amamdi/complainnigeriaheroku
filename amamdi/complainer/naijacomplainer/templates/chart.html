@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Nigeria-Complaints Summary</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/css2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css3/style.css">
+     <link rel="stylesheet" href="/static/css2/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script>
+        var endpoint = '{% url 'chartdata' %}'
+        var defaultData = []
+        var labels = []
+        $.ajax({
+            method: "GET",
+            url: endpoint,
+            success: function(data){
+                        labels = data.labels
+                        defaultData = data.default
+                        setChart()
+                        },
+              error: function(error_data){
+                        console.log("error")
+                        console.log(error_data)}
+        })
+
+        function setChart(){
+             var ctx = document.getElementById('myChart').getContext('2d');
+                 var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels ,
+                            datasets: [{
+                                label: 'Number of complaints according to states',
+                                data: defaultData,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(256, 100, 14, 0.2)',
+                                    'rgba(55, 163, 236, 0.2)',
+                                    'rgba(257, 207, 87, 0.2)',
+                                    'rgba(76, 193, 193, 0.2)',
+                                    'rgba(154, 103, 256, 0.2)',
+                                    'rgba(256, 160, 65, 0.2)',
+                                    'rgba(257, 101, 133, 0.2)',
+                                    'rgba(56, 164, 237, 0.2)',
+                                    'rgba(258, 208, 88, 0.2)',
+                                    'rgba(77, 194, 194, 0.2)',
+                                    'rgba(155, 104, 257, 0.2)',
+                                    'rgba(259, 160, 66, 0.2)',
+                                    'rgba(260, 104, 134, 0.2)',
+                                    'rgba(57, 166, 239, 0.2)',
+                                    'rgba(260, 210, 88, 0.2)',
+                                    'rgba(77, 196, 194, 0.2)',
+                                    'rgba(156, 106, 259, 0.2)',
+                                    'rgba(261, 161, 67, 0.2)',
+                                    'rgba(262, 102, 134, 0.2)',
+                                    'rgba(59, 166, 240, 0.2)',
+                                    'rgba(263, 208, 88, 0.2)',
+                                    'rgba(79, 198, 194, 0.2)',
+                                    'rgba(159, 108, 260, 0.2)',
+                                    'rgba(265, 161, 66, 0.2)',
+                                    'rgba(268, 102, 136, 0.2)',
+                                    'rgba(60, 168, 241, 0.2)',
+                                    'rgba(270, 210, 90, 0.2)',
+                                    'rgba(80, 200, 196, 0.2)',
+                                    'rgba(160, 104, 264, 0.2)',
+                                    'rgba(272, 211, 65, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+<!--                                yAxes: [{-->
+<!--                                    ticks: {-->
+<!--                                        beginAtZero: true-->
+<!--                                            }-->
+<!--                                        }]-->
+                                    }
+                                }
+                            });
+<!--                                }]-->
+<!--                                }-->
+<!--                                })-->
+<!--                        console.log(data)-->
+            }
+
+
+    </script>
+
+<script>
+var endpoint = '{% url 'chartdata2' %}'
+        var defaultData = []
+        var labels = []
+        $.ajax({
+            method: "GET",
+            url: endpoint,
+            success: function(data){
+                        labels = data.labels
+                        defaultData = data.default
+                        setChart2()
+                        },
+              error: function(error_data){
+                        console.log("error")
+                        console.log(error_data)}
+        })
+
+        function setChart2(){
+             var ctx = document.getElementById('myChart2').getContext('2d');
+                 var myChart2 = new Chart(ctx, {
+                        type: 'polarArea',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Number of complaints according to defaulter',
+                                data: defaultData,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(256, 100, 14, 0.2)',
+                                    'rgba(55, 163, 236, 0.2)',
+                                    'rgba(257, 207, 87, 0.2)',
+                                    'rgba(76, 193, 193, 0.2)',
+                                    'rgba(154, 103, 256, 0.2)',
+                                    'rgba(256, 160, 65, 0.2)',
+                                    'rgba(257, 101, 133, 0.2)',
+                                    'rgba(56, 164, 237, 0.2)',
+                                    'rgba(258, 208, 88, 0.2)',
+                                    'rgba(77, 194, 194, 0.2)',
+                                    'rgba(155, 104, 257, 0.2)',
+                                    'rgba(259, 160, 66, 0.2)',
+                                    'rgba(260, 104, 134, 0.2)',
+                                    'rgba(57, 166, 239, 0.2)',
+                                    'rgba(260, 210, 88, 0.2)',
+                                    'rgba(77, 196, 194, 0.2)',
+                                    'rgba(156, 106, 259, 0.2)',
+                                    'rgba(261, 161, 67, 0.2)',
+                                    'rgba(262, 102, 134, 0.2)',
+                                    'rgba(59, 166, 240, 0.2)',
+                                    'rgba(263, 208, 88, 0.2)',
+                                    'rgba(79, 198, 194, 0.2)',
+                                    'rgba(159, 108, 260, 0.2)',
+                                    'rgba(265, 161, 66, 0.2)',
+                                    'rgba(268, 102, 136, 0.2)',
+                                    'rgba(60, 168, 241, 0.2)',
+                                    'rgba(270, 210, 90, 0.2)',
+                                    'rgba(80, 200, 196, 0.2)',
+                                    'rgba(160, 104, 264, 0.2)',
+                                    'rgba(272, 211, 65, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+<!--                                yAxes: [{-->
+<!--                                    ticks: {-->
+<!--                                        beginAtZero: true-->
+<!--                                            }-->
+<!--                                        }]-->
+                                    }
+                                }
+                            });
+<!--                                }]-->
+<!--                                }-->
+<!--                                })-->
+<!--                        console.log(data)-->
+            }
+
+</script>
+
+<script>
+var endpoint = '{% url 'chartdata3' %}'
+        var defaultData = []
+        var labels = []
+        $.ajax({
+            method: "GET",
+            url: endpoint,
+            success: function(data){
+                        labels = data.labels
+                        defaultData = data.default
+                        setChart3()
+                        },
+              error: function(error_data){
+                        console.log("error")
+                        console.log(error_data)}
+        })
+
+        function setChart3(){
+             var ctx = document.getElementById('myChart3').getContext('2d');
+                 var myChart3 = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Number of complaints according to Nature',
+                                data: defaultData,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(256, 100, 14, 0.2)',
+                                    'rgba(55, 163, 236, 0.2)',
+                                    'rgba(257, 207, 87, 0.2)',
+                                    'rgba(76, 193, 193, 0.2)',
+                                    'rgba(154, 103, 256, 0.2)',
+                                    'rgba(256, 160, 65, 0.2)',
+                                    'rgba(257, 101, 133, 0.2)',
+                                    'rgba(56, 164, 237, 0.2)',
+                                    'rgba(258, 208, 88, 0.2)',
+                                    'rgba(77, 194, 194, 0.2)',
+                                    'rgba(155, 104, 257, 0.2)',
+                                    'rgba(259, 160, 66, 0.2)',
+                                    'rgba(260, 104, 134, 0.2)',
+                                    'rgba(57, 166, 239, 0.2)',
+                                    'rgba(260, 210, 88, 0.2)',
+                                    'rgba(77, 196, 194, 0.2)',
+                                    'rgba(156, 106, 259, 0.2)',
+                                    'rgba(261, 161, 67, 0.2)',
+                                    'rgba(262, 102, 134, 0.2)',
+                                    'rgba(59, 166, 240, 0.2)',
+                                    'rgba(263, 208, 88, 0.2)',
+                                    'rgba(79, 198, 194, 0.2)',
+                                    'rgba(159, 108, 260, 0.2)',
+                                    'rgba(265, 161, 66, 0.2)',
+                                    'rgba(268, 102, 136, 0.2)',
+                                    'rgba(60, 168, 241, 0.2)',
+                                    'rgba(270, 210, 90, 0.2)',
+                                    'rgba(80, 200, 196, 0.2)',
+                                    'rgba(160, 104, 264, 0.2)',
+                                    'rgba(272, 211, 65, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+<!--                                yAxes: [{-->
+<!--                                    ticks: {-->
+<!--                                        beginAtZero: true-->
+<!--                                            }-->
+<!--                                        }]-->
+                                    }
+                                }
+                            });
+<!--                                }]-->
+<!--                                }-->
+<!--                                })-->
+<!--                        console.log(data)-->
+            }
+
+</script>
+    <style>
+        #one:hover{
+        color: black !important;
+        }
+    </style>
+</head>
+<body>
+  <div class="half">
+    <div class="bg order-1 order-md-2" style="background-image: url('/static/images/ovinuchi-ejiohuo-OxesnxkySD0-unsplash.jpg');"> <p style="padding-left:15px;padding-top:15px;"><a href="{% url 'logout' %}" id="one" style="text-decoration:none;color:green;">Log Out</a></p><p style="padding-top: 30px;color:white;font-size:30px;text-align:center;font-weight:bold;">Complaints Summary</p></div>
+    <div class="order-2 order-md-1">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+{% if sorted_list_state %}
+            <div class="col-sm-8" style="text-align:center;list-style-position:inside;">
+                WORST STATE BY COMPLAINTS
+{% for state in sorted_list_state %}
+<ul>
+    <li>{{ state.state }} {{ state.count }}</li>
+</ul>
+{% endfor %}
+</div>
+{% endif %}
+<br>
+<br>
+{% if sorted_list_nature %}
+<div class="col-sm-8" style="margin-top: 10px;text-align:center;list-style-position:inside;">
+TOP 5 COMPLAINTS
+{% for nature in sorted_list_nature %}
+<ul>
+    <li>{{ nature.natureOfComplaint }} {{ nature.count }}</li>
+</ul>
+{% endfor %}
+</div>
+{% endif %}
+<br>
+<br>
+<div class="col-sm-8" style="margin-top: 20px;text-align:center;">
+    NUMBER OF COMPLAINTS ACCORDING TO STATES
+<canvas id="myChart" width="400" height="400"></canvas>
+
+</div>
+<br>
+<br>
+<div class="col-sm-8" style="margin-top: 20px;text-align:center;">
+    NUMBER OF COMPLAINTS ACCORDING TO DEFAULTERS
+<canvas id="myChart2" width="400" height="400"></canvas>
+
+</div>
+<br>
+<br>
+<div class="col-sm-8" style="margin-top: 20px;text-align:center;padding-bottom: 40px;">
+    NUMBER OF COMPLAINTS ACCORDING TO NATURE
+<canvas id="myChart3" width="400" height="400"></canvas>
+
+</div>
+<br>
+<br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
