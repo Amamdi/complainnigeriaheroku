@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'naijacomplainer',
     'accounts',
     'rest_framework',
+    'crispy_forms',
 ]
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
@@ -81,22 +84,31 @@ WSGI_APPLICATION = 'complainer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'ebittu',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
+#         'OPTIONS': {
+#               'read_default_file': '/etc/mysql/my.cnf',
+#            },
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'complainnigeria',
+        'USER': 'complainnigeriauser',
+        'PASSWORD': 'Ebit4life*',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -137,7 +149,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/index/'
+LOGIN_REDIRECT_URL = '/index2/'
 LOGOUT_REDIRECT_URL = '/'
 
 # LOGIN_REDIRECT_URL = 'home'
@@ -174,6 +186,8 @@ SOCIAL_AUTH_TWITTER_SECRET = 'yrgolDutQ2m2t7VyYQmeOAIZ9bUVado6LCbKKkVzrV8DfaAEPx
 
 
 # AUTHENTICATION_BACKENDS = ['django-dual-authentication.backends.DualAuthentication']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 

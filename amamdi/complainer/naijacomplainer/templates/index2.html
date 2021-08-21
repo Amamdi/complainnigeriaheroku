@@ -21,6 +21,16 @@
     .four:hover{
         color: black !important;
         }
+
+      @media (max-width: 700){
+        .form-block{
+            width: 75%;
+        }
+
+      @media(min-width: 700){
+          .form-block{
+              width: 100%;
+          }
 </style>
 </head>  
 <body>  
@@ -30,7 +40,7 @@
   <div class="container-fluid" style="background-image: url('/static/images/ovinuchi-ejiohuo-OxesnxkySD0-unsplash.jpg');background-size:100% 100%;">
       <div>Hi {{ user.username }}!</div>
 
-      <form action="{% url 'index' %}" method="GET" value="{{request.GET.q}}">
+      <form action="{% url 'index2' %}" method="GET" value="{{request.GET.q}}">
 <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search complaints"/>
 <input type="submit" name="submit" value="Search"/>
 </form>
@@ -40,18 +50,18 @@
       <div><a href="{% url 'logout' %}" style="text-decoration:none;color:green;" class="four">Log Out</a></div>
 <!--    <div class="bg order-1 order-md-2" style="background-image: url('/static/images/bg_1.jpg');"></div>-->
         <div class="contents">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-5">
+            <div class="container d-flex align-items-center justify-content-center">
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="form-block" style="background:transparent !important;"> <!--style="width:190vw"-->
                             <div class="text-center mb-5">
                                 <h3>Welcome {{ user.username }}, please make your complaint.</h3>
                             </div>
-                            <form method="POST" action="{% url 'index' %}">
+                            <form method="POST" action="{% url 'index2' %}">
                                 {% csrf_token %}
                             <div class="form-group first">
                             <label class="col-sm-2 col-form-label" ><b>Date:</b></label>
-                                <input type="text" name="date" required id="id_date" class="form-control" placeholder="Date format: Year-Month-Date E.g:2021-01-01">
+                                <input type="date" name="date" required id="id_date" class="form-control" placeholder="Date format: Year-Month-Date E.g:2021-01-01">
                             <!--    <div class="col-sm-4">-->
 <!--                            {{ form.date }}-->
                             </div>

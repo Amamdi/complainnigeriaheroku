@@ -66,6 +66,7 @@ class Complainer(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateField(null=True)
+    time = models.DateTimeField(auto_now_add=True, null=True)
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     state = models.CharField(
@@ -84,6 +85,6 @@ class Complainer(models.Model):
 
     class Meta:  
         db_table = "complainers"
-        ordering = ["-id"]
+        ordering = ["-id", "-time"]
 
 
