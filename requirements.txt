@@ -1,5 +1,4 @@
 appdirs==1.4.4
-apsw==3.36.0-r1
 apturl==0.5.2
 asgiref==3.3.4
 bcrypt==3.1.7
