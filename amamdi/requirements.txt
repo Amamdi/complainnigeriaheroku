@@ -22,7 +22,7 @@ cssselect==1.1.0
 cssutils==2.3.0
 
 dbus-python==1.2.16
-defer==1.0.6
+defer==1.0.4
 defusedxml==0.7.1
 distlib==0.3.2
 distro==1.6.0
