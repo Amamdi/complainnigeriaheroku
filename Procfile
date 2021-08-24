@@ -1,2 +1,1 @@
-web: gunicorn naijacomplainer.wsgi
-web: gunicorn naijacomplainer:app --preload
+web: gunicorn config.wsgi
