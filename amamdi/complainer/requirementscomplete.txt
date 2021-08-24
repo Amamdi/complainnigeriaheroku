@@ -41,6 +41,7 @@ fasteners==0.16.3
 feedparser==6.0.8
 filelock==3.0.12
 future==0.18.2
+gunicorn==20.1.0
 gyp==0.1
 html2text==2020.1.16
 html5-parser==0.4.9
@@ -60,7 +61,7 @@ lockfile==0.12.2
 louis==3.16.0
 lxml==4.6.3
 macaroonbakery==1.3.1
-Mako==1.1.3
+Mako==1.1.5
 Markdown==3.3.4
 MarkupSafe==2.0.1
 mechanize==0.4.5
@@ -74,6 +75,7 @@ oauthlib==3.1.1
 olefile==0.46
 packaging==21.0
 paramiko==2.7.2
+pbr==5.6.0
 pexpect==4.8.0
 Pillow==8.3.1
 pip-upgrader==1.4.15
@@ -105,7 +107,7 @@ python3-openid==3.2.0
 pytz==2021.1
 pyxdg==0.27
 PyYAML==5.4.1
-pyzstd==0.14.4
+pyzstd==0.15.0
 regex==2021.8.21
 reportlab==3.6.1
 repoze.lru==0.7
@@ -122,6 +124,7 @@ soupsieve==2.2.1
 sqlparse==0.4.1
 systemd-python==234
 terminaltables==3.1.0
+testresources==2.0.1
 texttable==1.6.4
 ubuntu-advantage-tools==27.2
 ubuntu-drivers-common==0.0.0
