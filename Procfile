@@ -1,1 +1,2 @@
-web: gunicorn complainnigeriaheroku:app --preload
+web: gunicorn naijacomplainer.wsgi
+web: gunicorn naijacomplainer:app --preload
