@@ -332,7 +332,6 @@
       <change beforePath="$PROJECT_DIR$/amamdi/complainer/templates/registration/password_reset_form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/amamdi/complainer/templates/registration/signup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/amamdi/complainer/util/charts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,1 +1,1 @@
-web: gunicorn naijacomplainer.wsgi
+web: gunicorn complainer.wsgi
