@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'complainnigeria',
         'USER': 'complainnigeriauser',
         'PASSWORD': 'Ebit4life*',
-        'HOST': 'localhost',
+        'HOST': 'complainnigeriaheroku.herokuapp.com',
         'PORT': '',
     }
 }
