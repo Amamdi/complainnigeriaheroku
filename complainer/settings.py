@@ -100,16 +100,16 @@ WSGI_APPLICATION = 'complainer.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'complainnigeria',
-        'USER': 'complainnigeriauser',
-        'PASSWORD': 'Ebit4life*',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'complainnigeria',
+#         'USER': 'complainnigeriauser',
+#         'PASSWORD': 'Ebit4life*',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
