@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-# import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = 'rx7@+j)mmntzg!h(i$4#3c(d3mo_=&!j#%rlj99wg7z$^5r5ju'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaheroku.herokuapp.com']
 
 
 # Application definition
@@ -111,6 +111,7 @@ DATABASES = {
     }
 }
 
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -189,9 +190,6 @@ SOCIAL_AUTH_TWITTER_SECRET = 'yrgolDutQ2m2t7VyYQmeOAIZ9bUVado6LCbKKkVzrV8DfaAEPx
 # AUTHENTICATION_BACKENDS = ['django-dual-authentication.backends.DualAuthentication']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
-# Configure Django App for Heroku.
-# django_heroku.settings(locals())
 
 
 
