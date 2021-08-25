@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" />
@@ -15,8 +14,6 @@
       <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/amamdi/complainer/complainer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/amamdi/complainer/complainer/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amamdi/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/amamdi/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/asgi.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/settings.py" beforeDir="false" />
