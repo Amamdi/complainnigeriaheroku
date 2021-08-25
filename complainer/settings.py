@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import dj_database_url
+import psycopg2
 from pathlib import Path
 # import django_heroku
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'rx7@+j)mmntzg!h(i$4#3c(d3mo_=&!j#%rlj99wg7z$^5r5ju'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaheroku.herokuapp.com']
 
@@ -111,6 +113,13 @@ WSGI_APPLICATION = 'complainer.wsgi.application'
 #     }
 # }
 
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+DATABASE_URL: postgres://jxeemyycqhnmmz:126836751d6da053b771daca1855bd4151f7c99f96e0f4174cb59e467303f147@ec2-18-235-45-217.compute-1.amazonaws.com:5432/d7p82mtbj9h25q
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -193,6 +202,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Configure Django App for Heroku.
 # django_heroku.settings(locals())
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 
