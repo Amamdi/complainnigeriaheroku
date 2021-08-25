@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-import dj_database_url
-import psycopg2
+# import dj_database_url
+# import psycopg2
 from pathlib import Path
 # import django_heroku
 
@@ -102,16 +102,16 @@ WSGI_APPLICATION = 'complainer.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'complainnigeria',
-#         'USER': 'complainnigeriauser',
-#         'PASSWORD': 'Ebit4life*',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'complainnigeria',
+        'USER': 'complainnigeriauser',
+        'PASSWORD': 'Ebit4life*',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # DATABASE_URL = os.environ['DATABASE_URL']
 #
