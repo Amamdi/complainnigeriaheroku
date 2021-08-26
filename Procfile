@@ -1,1 +1,1 @@
-web: gunicorn complainer.wsgi
+web: gunicorn complainer.wsgi --log-file -
