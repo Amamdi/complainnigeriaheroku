@@ -33,9 +33,9 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaheroku.herokuapp.com']
+ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaheroku.herokuapp.com', 'http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -161,10 +161,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/index2/'
 LOGOUT_REDIRECT_URL = '/'
