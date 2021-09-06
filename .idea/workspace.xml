@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid-framework.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630652220697</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Testing debug">
+      <created>1630911925234</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1630911925234</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -222,6 +226,7 @@
       <path value="$PROJECT_DIR$/amamdi/complainer" />
     </ignored-roots>
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Testing debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing debug" />
   </component>
 </project>
