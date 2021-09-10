@@ -21,7 +21,7 @@ from naijacomplainer import views
 from django.conf.urls.static import static
 from django.conf import settings
 # from accounts import views as account_views
-from naijacomplainer.views import HomeView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView
+from naijacomplainer.views import HomeView, ComplaintsView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
@@ -41,9 +41,11 @@ urlpatterns = [
     path('edit/<int:id>', views.edit, name="edit"),
     path('update/<int:id>', views.update, name="update"),
     path('delete/<int:id>', views.destroy, name="delete"),
+    path('termsofuse/', views.termsofuse, name='terms'),
     path('search/', include('naijacomplainer.urls'), name="search"),
     # path('success/chart/filter-options/', views.get_filter_options, name='chart-filter-options'),
     path('success/chart/', HomeView.as_view(), name='chart'),
+    path('complaintsummary/', ComplaintsView.as_view(), name='complaintsummary'),
     path("pie/", csrf_exempt(PieChartView.as_view()), name="pie_chart"),
     path("area/", AreaChartView.as_view(), name="area_chart"),
     path("bar/", BarChartView.as_view(), name="bar_chart"),

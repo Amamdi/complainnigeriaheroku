@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/complaintsummary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/termsofuse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complainer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +58,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/naijacomplainer/templates" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/naijacomplainer/templates" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/amamdi" />
       <recent name="$PROJECT_DIR$/amamdi/complainer" />
       <recent name="$PROJECT_DIR$/amamdi/complainer/naijacomplainer/templates" />
-      <recent name="$PROJECT_DIR$/amamdi/complainer/naijacomplainer/static/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/amamdi/complainer" />
@@ -230,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630917439471</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Solved debug issues">
+      <created>1630918329210</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1630918329210</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -192,6 +192,96 @@ def success(request):
     return render(request, 'success.html')
 
 
+def termsofuse(request):
+    return render(request, 'termsofuse.html')
+
+
+def complaintsummary(request):
+    return render(request, 'complaintsummary.html')
+
+
+class ComplaintsView(View):
+    def get(self, request, *args, **kwargs):
+        sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+        sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(
+            count=Count('natureOfComplaint')).order_by('-count')[:5]
+
+        date_form = DateForm()
+        context = {"sorted_list_state": sorted_list_state, "sorted_list_nature": sorted_list_nature, "form": date_form}
+
+        return render(request, 'complaintsummary.html', context)
+
+    def sort_states(self, item):
+        return item.get("count")
+
+    def sort_nature(self, item):
+        return item.get("count")
+
+    def post(self, request, *args, **kwargs):
+        # sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+        # sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(count=Count('natureOfComplaint')).order_by('-count')[:5]
+
+        date_form = DateForm()
+        context = {"sorted_list_state": '', "sorted_list_nature": '', "form": date_form}
+
+        date = request.POST.get("date")
+
+        # ----------- CHANGE START ------------
+        if date:
+            date_split = date.split(" ")
+            date_array = date_split[0].split("/")
+            year = int(date_array[2])
+            month = int(date_array[1])
+            day = int(date_array[0])
+            qs_1 = Complainer.objects.filter(date__year=year, date__month=month, date__day=day)
+        else:
+            qs_1 = Complainer.objects.all()
+
+        # ------------ CHANGE END --------------
+        qs_2 = qs_1.values("state").annotate(count=Count('state'))
+        qs_3 = qs_1.values("natureOfComplaint").annotate(count=Count('natureOfComplaint'))
+        states_by_count = dict()
+        nature_by_count = dict()
+        # states_by_count = get_year_dict()
+        for r in qs_2:
+
+            if states_by_count.get(r.get("state")):
+                states_by_count[r.get("state")] += 1
+                continue
+            states_by_count[r.get("state")] = 1
+        sorted_list_state = [{"state": k, "count": v} for k, v in states_by_count.items()]
+        sorted_list_state.sort(key=self.sort_states, reverse=True)
+        context["sorted_list_state"] = sorted_list_state[:5]
+
+        for r in qs_3:
+
+            if nature_by_count.get(r.get("natureOfComplaint")):
+                nature_by_count[r.get("natureOfComplaint")] += 1
+                continue
+            nature_by_count[r.get("natureOfComplaint")] = 1
+        sorted_list_nature = [{"natureOfComplaint": k, "count": v} for k, v in nature_by_count.items()]
+        sorted_list_nature.sort(key=self.sort_states, reverse=True)
+        context["sorted_list_nature"] = sorted_list_nature[:5]
+
+        # print(request.POST)
+        # print(sorted_list_state)
+        # print(sorted_list_nature)
+        # print(type(date))
+        # print(date)
+        # date_split = date.split(" ")
+        # date_array = date_split[0].split("/")
+        # year = int(date_array[2])
+        # month = int(date_array[1])
+        # date_obj = datetime.strptime(date, '%d-%m-%Y %H:%M')
+        # print(date_obj)
+        # print(year)
+        # print(month)
+        # print(states_by_count)
+        print("I am returning")
+        context["filter_date"] = date
+        return render(request, 'complaintsummary.html', context)
+
+
 # def user(request):
 #     lists = Complainer.objects.filter(user=request.user)
 #     return render(request, 'index.html', {'lists': lists})
