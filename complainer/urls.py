@@ -21,7 +21,7 @@ from naijacomplainer import views
 from django.conf.urls.static import static
 from django.conf import settings
 # from accounts import views as account_views
-from naijacomplainer.views import HomeView, ComplaintsView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView
+from naijacomplainer.views import HomeView, ComplaintsView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView, UserDelete
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
@@ -41,6 +41,7 @@ urlpatterns = [
     path('edit/<int:id>', views.edit, name="edit"),
     path('update/<int:id>', views.update, name="update"),
     path('delete/<int:id>', views.destroy, name="delete"),
+    path('<int:pk>/delete', UserDelete.as_view(), name='user_confirm_delete'),
     path('termsofuse/', views.termsofuse, name='terms'),
     path('search/', include('naijacomplainer.urls'), name="search"),
     # path('success/chart/filter-options/', views.get_filter_options, name='chart-filter-options'),

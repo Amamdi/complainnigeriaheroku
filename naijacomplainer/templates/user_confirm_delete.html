@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Account Delete</title>
+</head>
+<body>
+ {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete your account?</p>
+        <input type="submit" value="Confirm">
+    </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+</body>
+</html>

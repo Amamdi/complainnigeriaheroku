@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/complaintsummary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/termsofuse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/user_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/amamdi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/amamdi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/termsofuse.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/termsofuse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/naijacomplainer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/sqlformat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +47,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/index2.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/accounts/forms.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/accounts/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
   </component>
@@ -58,7 +71,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/naijacomplainer/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
@@ -242,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630918329210</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added complaintsummary and terms of use pages">
+      <created>1631284032382</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1631284032382</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -275,6 +295,7 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Testing debug" />
     <MESSAGE value="Solved debug issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved debug issues" />
+    <MESSAGE value="added complaintsummary and terms of use pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added complaintsummary and terms of use pages" />
   </component>
 </project>

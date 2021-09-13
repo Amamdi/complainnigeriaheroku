@@ -14,6 +14,9 @@ from django.db.models import Count, F, Sum, Avg
 from django.db.models.functions import ExtractYear, ExtractMonth
 from util.charts import months, get_year_dict
 from datetime import datetime
+from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 
 # Create your views here.
 
@@ -182,6 +185,16 @@ def destroy(request, id):
     complainer = Complainer.objects.get(id=id, user=request.user)
     complainer.delete()
     return redirect("/index2/")
+
+
+User = get_user_model()
+
+
+class UserDelete(DeleteView):
+    model = User
+    # User = Complainer.objects.get()
+    success_url = reverse_lazy('login')
+    template_name = 'user_confirm_delete.html'
 
 
 def index(request):

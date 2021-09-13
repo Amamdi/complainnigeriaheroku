@@ -312,6 +312,12 @@ No search results for this query
   <a href="{% url 'login' %}" style="color:green;" class="four">Log In</a>
 {% endif %}
 
+{% if user.is_authenticated %}
+    <a href="{% url 'user_confirm_delete' user.id %}">Delete Account</a>
+{% else %}
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
 
 
 

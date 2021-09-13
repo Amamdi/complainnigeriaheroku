@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/amamdi/Documents/recent works/amamdi/venv/bin/python3" "$0" "$@"
+'''exec' "/home/amamdi/complainnigeriaherokuTestingResponsivenessdebug (copy)/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
