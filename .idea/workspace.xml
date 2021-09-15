@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/amamdi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/amamdi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631519456170</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added google login settings">
+      <created>1631698758683</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1631698758683</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -294,6 +299,7 @@
     <MESSAGE value="Testing debug" />
     <MESSAGE value="Solved debug issues" />
     <MESSAGE value="added complaintsummary and terms of use pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added complaintsummary and terms of use pages" />
+    <MESSAGE value="added google login settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="added google login settings" />
   </component>
 </project>
