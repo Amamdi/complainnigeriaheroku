@@ -197,6 +197,8 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.instagram.InstagramOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth',
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -204,11 +206,12 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_FACEBOOK_KEY = '3621880444601375'
 SOCIAL_AUTH_FACEBOOK_SECRET = '710f7ccb6e0c24a7a3b2a6e23e9b1baf'
-SOCIAL_AUTH_TWITTER_KEY = 'o9nurQjFw2N5vozpZ3sTMGm1C'
-SOCIAL_AUTH_TWITTER_SECRET = 'yrgolDutQ2m2t7VyYQmeOAIZ9bUVado6LCbKKkVzrV8DfaAEPx'
 SOCIAL_AUTH_GOOGLE_KEY = '844037714125-r5ncs50h7n70rn53hfktat06pjmnqmkd.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_SECRET = 'XmnCiHqsdOx-JSVdaaM-4jdl'
 
+
+SOCIAL_AUTH_TWITTER_KEY = 'o9nurQjFw2N5vozpZ3sTMGm1C'
+SOCIAL_AUTH_TWITTER_SECRET = 'yrgolDutQ2m2t7VyYQmeOAIZ9bUVado6LCbKKkVzrV8DfaAEPx'
 
 # AUTHENTICATION_BACKENDS = ['django-dual-authentication.backends.DualAuthentication']
 
