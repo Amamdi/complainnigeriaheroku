@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'whitenoise.runserver_nostatic',
-    'captcha'
+    # 'captcha'
 ]
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
