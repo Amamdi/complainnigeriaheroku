@@ -1,12 +1,20 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Complainer  
+
+from . import models
+from .models import Complainer
 
 
 class ComplainerForm(forms.ModelForm):  
-    class Meta:  
-        model = Complainer  
+    class Meta:
+        model = Complainer
         fields = "__all__"
+        # fields = ['user', 'date', 'anonymous', 'firstname', 'lastname', 'state', 'complaintIsAgainst', 'natureOfComplaint', 'complaint', 'images']
+
+# class UploadForm(forms.ModelForm):
+#     class Meta:
+#         model = Complainer
+#         fields = Complainer.images
 
 
 class DateForm(forms.Form):

@@ -18,11 +18,30 @@
         #one:hover{
         color: black !important;
         }
+       #boxes .bi{
+       float: left;
+       margin-right: 3.5vw;
+       margin-left: 3.5vw;
+       }
+       .bi {width: 21vw;}
+@media screen and (max-width: 700px) {
+  #boxes .bi{
+        display: flex;
+        flex-direction: column;
+        float: none;
+        width: 100%;
+        margin: 20px;
+        justify-content: center;
+        align-items: center;
+  }
+}
     </style>
 </head>
 <body>
  <div class="half">
-     <div class="bg order-1 order-md-2" style="background-image: url('/static/images/babatunde-olajide-jcQdBcW7Tmw-unsplash.jpg');background-size:cover;"><div style="padding-left:15px;padding-top:15px;"><a href="{% url 'logout' %}" style="text-decoration:none;color:green;" id="one">Back</a></div><p style="padding-top: 40px;color:white;font-size:30px;text-align:center;font-weight:bold;">View Complaints</p></div>
+     <div class="bg order-1 order-md-2" style="background-image: url('/static/images/babatunde-olajide-jcQdBcW7Tmw-unsplash.jpg');background-size:cover;">
+         <div style="padding-left:15px;padding-top:15px;"><a href="{% url 'logout' %}" style="text-decoration:none;color:green;" id="one">Back</a></div>
+         <p style="padding-top: 40px;color:white;font-size:30px;text-align:center;font-weight:bold;">View Complaints</p></div>
     <div class="order-2 order-md-1">
     <div class="contents" style="background:none">
 <br/>
@@ -33,6 +52,61 @@
 </div>
 </form>
 
+<p hidden id="filter_date">{{filter_date}}</p>
+
+<div id="boxes" style="box-sizing: border-box;display: inline-block;padding:0 7vw 0 7.5vw;">
+    <div class="bi" style="border: solid 4px blue; min-height: 21vw; border-radius: 6%; font-size: 1.3vw;">
+
+            {% if sorted_list_state %}
+    <div style="text-align:center;list-style-position:inside;">
+                WORST STATE BY COMPLAINTS
+        {% for state in sorted_list_state %}
+        <ul>
+        <li>{{ state.state }} {{ state.count }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <br>
+    <br>
+
+    </div>
+
+
+    <div class="bi" style="border: solid 4px blue;min-height: 21vw;border-radius: 6%; font-size: 1.3vw;">
+
+            {% if sorted_list_nature %}
+    <div style="text-align:center;list-style-position:inside;">
+                TOP COMPLAINTS
+        {% for nature in sorted_list_nature %}
+    <ul>
+    <li>{{ nature.natureOfComplaint }} {{ nature.count }}</li>
+    </ul>
+    {% endfor %}
+    </div>
+    {% endif %}
+    <br>
+    <br>
+
+    </div>
+
+    <div class="bi" style="border: solid 4px blue;min-height: 21vw;border-radius: 6%; font-size: 1.3vw;">
+
+       {% if sorted_list_against %}
+    <div style="text-align:center;list-style-position:inside;">
+                TOP COMPLAINTS AGAINST
+        {% for against in sorted_list_against %}
+        <ul>
+        <li>{{ against.complaintIsAgainst }} {{ against.count }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <br>
+    <br>
+
+    </div>
+</div>
 
 {% if submitbutton == 'Search' and request.GET.q != '' %}
 {% if results %}
@@ -51,6 +125,7 @@
         <th>Complaint is Against</th>
         <th>Nature of Complaint</th>
         <th>Complaint</th>
+        <th>Media</th>
 
     </tr>
     </thead>
@@ -59,12 +134,21 @@
 
     <tr>
         <td>{{ result.date }}</td>
+        {% if result.anonymous %}
+        <td>Anonymous</td>
+        {% else %}
         <td>{{ result.firstname }}</td>
+        {% endif %}
+        {% if result.anonymous %}
+        <td>Anonymous</td>
+        {% else %}
         <td>{{ result.lastname }}</td>
+        {% endif %}
         <td>{{ result.state }}</td>
         <td>{{ result.complaintIsAgainst }}</td>
         <td>{{ result.natureOfComplaint }}</td>
         <td>{{ result.complaint }}</td>
+        <td><a href="{% url 'images' result.id %}" style="color:green;" class="four"/>Media</a></td>
     </tr>
 {% endfor %}
     </tbody>
@@ -82,6 +166,8 @@
 <!--<br/>-->
 
 <!--{% endfor %}-->
+<br>
+<br>
 {% else %}
 No search results for this query
 {% endif %}

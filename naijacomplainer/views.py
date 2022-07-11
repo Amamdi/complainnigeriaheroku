@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
+from complainer import settings
+from django.conf import settings
 from .forms import ComplainerForm, DateForm
 from .models import Complainer
 from django.contrib.auth.decorators import login_required
@@ -17,6 +20,7 @@ from datetime import datetime
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
+import requests
 
 # Create your views here.
 
@@ -104,21 +108,37 @@ borderWidth = ['1']
 def emp(request):
     # print(request.POST)
     if request.method == "POST":
+        print("POST", request.POST)
+        print("FILES", request.FILES)
         form = ComplainerForm(request.POST)
         if form.is_valid():
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result = r.json()
             try:
                 # print(request)
                 # form.save()
-                instance = form.save()
-                instance.user = request.user
-                instance.save()
+                if result['success']:
+                    instance = form.save()
+                    instance.images = request.FILES.get("images")
+                    instance.videos = request.FILES.get("videos")
+                    instance.user = request.user
+                    instance.save()
                 # form.save(user=request.user)
                 # return HttpResponse('Complaint successfully submitted')
                 # (request, 'index.html', {'form': form})
                 # i only added the code below
                 # however if you want to use redirect, you have to add it above
                 # then change the httpresponse below to redirect
-                return redirect('/success/')
+                    messages.success(request, 'New complaint added with success!')
+                    return redirect('/success/')
+                else:
+                    messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+                    return redirect('/index2/')
                 # ensure you add success to your url
                 # eg. path('success/', views.success, name='success'),
             except:
@@ -137,13 +157,13 @@ def emp(request):
                 results = Complainer.objects.filter(lookups, user=request.user).distinct()
                 context = {'results': results, 'submitbutton': submitbutton}
                 return render(request, 'index2.html', context)
-
             except:
                 return render(request, 'index2.html', {'form': form, 'lists': lists})
         # for list in lists:
         #     print(list.date)
         return render(request, 'index2.html', {'form': form, 'lists': lists})
     else:
+        form = ComplainerForm()
         return render(request, 'index2.html', {'form': form, 'lists': lists})
 
 
@@ -154,6 +174,25 @@ def emp(request):
 #         raise Http404("Employee does not exist")
 #     return render(request, 'employee_detail.html', {'employee': employee})
 
+def image_upload_view(request):
+    """Process images uploaded by users"""
+    if request.method == 'POST':
+        print("POST", request.POST)
+        print("FILES",request.FILES)
+        form = ComplainerForm(request.POST, request.FILES)
+        lists = Complainer.objects.filter(user=request.user)
+        if form.is_valid():
+            instance = form.save()
+            instance.user = request.user
+            instance.save()
+            # Get the current instance object to display in the template
+            # img_obj = form.instance
+            # img_obj = form.instance
+            return render(request, 'index2.html', {'form': form, 'lists': lists})
+    else:
+        form = ComplainerForm()
+    return render(request, 'index2.html', {'form': form, 'lists': lists})
+
 
 def dashboard(request):
     lists = Complainer.objects.all()
@@ -163,6 +202,11 @@ def dashboard(request):
 def edit(request, id):
     complainer = Complainer.objects.get(id=id, user=request.user)
     return render(request, 'edit.html', {'complainer': complainer})
+
+
+def images(request, id):
+    lists = Complainer.objects.get(id=id)
+    return render(request, 'images.html', {'lists': lists})
 
 
 def update(request, id):
@@ -211,6 +255,94 @@ def termsofuse(request):
 
 def complaintsummary(request):
     return render(request, 'complaintsummary.html')
+
+
+class ComplaintSearchView(View):
+    def get(self, request, *args, **kwargs):
+        sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+        sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(count=Count('natureOfComplaint')).order_by('-count')[:5]
+        sorted_list_against = Complainer.objects.values("complaintIsAgainst").annotate(count=Count('complaintIsAgainst')).order_by('-count')[:5]
+
+        date_form = DateForm()
+        context = {"sorted_list_state": sorted_list_state, "sorted_list_nature": sorted_list_nature, "sorted_list_against": sorted_list_against, "form": date_form}
+
+        print(context)
+
+        return render(request, 'search.html', context)
+
+    def sort_states(self, item):
+        return item.get("count")
+
+    def sort_nature(self, item):
+        return item.get("count")
+
+    def sort_against(self, item):
+        return item.get("count")
+
+    def post(self, request, *args, **kwargs):
+        # sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+        # sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(count=Count('natureOfComplaint')).order_by('-count')[:5]
+
+        date_form = DateForm()
+        context = {"sorted_list_state": '', "sorted_list_nature": '', "sorted_list_against": '', "form": date_form}
+
+        date = request.POST.get("date")
+        qs_1 = Complainer.objects.all()
+        qs_2 = qs_1.values("state").annotate(count=Count('state'))
+        qs_3 = qs_1.values("natureOfComplaint").annotate(count=Count('natureOfComplaint'))
+        qs_4 = qs_1.values("complaintIsAgainst").annotate(count=Count('complaintIsAgainst'))
+        states_by_count = dict()
+        nature_by_count = dict()
+        against_by_count = dict()
+
+        # states_by_count = get_year_dict()
+        for r in qs_2:
+
+            if states_by_count.get(r.get("state")):
+                states_by_count[r.get("state")] += 1
+                continue
+            states_by_count[r.get("state")] = 1
+        sorted_list_state = [{"state": k, "count": v} for k, v in states_by_count.items()]
+        sorted_list_state.sort(key=self.sort_states, reverse=True)
+        context["sorted_list_state"] = sorted_list_state[:5]
+
+        for r in qs_3:
+
+            if nature_by_count.get(r.get("natureOfComplaint")):
+                nature_by_count[r.get("natureOfComplaint")] += 1
+                continue
+            nature_by_count[r.get("natureOfComplaint")] = 1
+        sorted_list_nature = [{"natureOfComplaint": k, "count": v} for k, v in nature_by_count.items()]
+        sorted_list_nature.sort(key=self.sort_states, reverse=True)
+        context["sorted_list_nature"] = sorted_list_nature[:5]
+
+        for r in qs_4:
+
+            if against_by_count.get(r.get("compliantIsAgainst")):
+                against_by_count[r.get("complaintIsAgainst")] += 1
+                continue
+            against_by_count[r.get("complaintIsAgainst")] = 1
+        sorted_list_against = [{"complaintIsAgainst": k, "count": v} for k, v in against_by_count.items()]
+        sorted_list_against.sort(key=self.sort_states, reverse=True)
+        context["sorted_list_against"] = sorted_list_against[:5]
+
+        # print(request.POST)
+        # print(sorted_list_state)
+        # print(sorted_list_nature)
+        # print(type(date))
+        # print(date)
+        # date_split = date.split(" ")
+        # date_array = date_split[0].split("/")
+        # year = int(date_array[2])
+        # month = int(date_array[1])
+        # date_obj = datetime.strptime(date, '%d-%m-%Y %H:%M')
+        # print(date_obj)
+        # print(year)
+        # print(month)
+        # print(states_by_count)
+        print("I am returning")
+        context["filter_date"] = date
+        return render(request, 'search.html', context)
 
 
 class ComplaintsView(View):
@@ -294,7 +426,6 @@ class ComplaintsView(View):
         context["filter_date"] = date
         return render(request, 'complaintsummary.html', context)
 
-
 # def user(request):
 #     lists = Complainer.objects.filter(user=request.user)
 #     return render(request, 'index.html', {'lists': lists})
@@ -304,7 +435,49 @@ class ComplaintsView(View):
 #     return HttpResponse('Complaint successfully submitted')
 
 
+# def searchposts(request):
+#     if request.method == 'GET':
+#         query = request.GET.get('q')
+#
+#         submitbutton = request.GET.get('submit')
+#
+#         if query is not None:
+#             lookups = Q(date__icontains=query) | Q(firstname__icontains=query) | Q(lastname__icontains=query) | Q(
+#                 state__icontains=query) | Q(complaintIsAgainst__icontains=query) | Q(
+#                 natureOfComplaint__icontains=query) | Q(complaint__icontains=query)
+#
+#             results = Complainer.objects.filter(lookups).distinct()
+#
+#             sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+#             sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(
+#                 count=Count('natureOfComplaint')).order_by('-count')[:5]
+#             sorted_list_against = Complainer.objects.values("complaintIsAgainst").annotate(
+#                 count=Count('complaintIsAgainst')).order_by('-count')[:5]
+#
+#             # sorted_count = Complainer.objects.filter(lookups).annotate(count=Count(lookups))
+#             context = {'results': results, 'submitbutton': submitbutton, 'sorted'}
+#
+#             return render(request, 'search.html', context)
+#
+#         else:
+#             return render(request, 'search.html')
+#
+#     else:
+#         return render(request, 'search.html')
+
+
 def searchposts(request):
+    sorted_list_state = Complainer.objects.values("state").annotate(count=Count('state')).order_by('-count')[:5]
+    sorted_list_nature = Complainer.objects.values("natureOfComplaint").annotate(
+        count=Count('natureOfComplaint')).order_by('-count')[:5]
+    sorted_list_against = Complainer.objects.values("complaintIsAgainst").annotate(
+        count=Count('complaintIsAgainst')).order_by('-count')[:5]
+
+    context = dict()
+    context["sorted_list_state"] = sorted_list_state
+    context["sorted_list_nature"] = sorted_list_nature
+    context["sorted_list_against"] = sorted_list_against
+
     if request.method == 'GET':
         query = request.GET.get('q')
 
@@ -316,16 +489,18 @@ def searchposts(request):
                 natureOfComplaint__icontains=query) | Q(complaint__icontains=query)
 
             results = Complainer.objects.filter(lookups).distinct()
+
             # sorted_count = Complainer.objects.filter(lookups).annotate(count=Count(lookups))
-            context = {'results': results, 'submitbutton': submitbutton}
+            context["results"] = results
+            context["submitbutton"] = submitbutton
 
             return render(request, 'search.html', context)
 
         else:
-            return render(request, 'search.html')
+            return render(request, 'search.html', context)
 
     else:
-        return render(request, 'search.html')
+        return render(request, 'search.html', context)
 
 
 def get_data(request, *args, **kwargs):
@@ -695,10 +870,12 @@ class PieChartView(APIView):
 
         for r in qs_3:
 
-            if nature_by_count.get(r.get("natureOfComplaint")):
-                nature_by_count[r.get("natureOfComplaint")] += 1
-                continue
-            nature_by_count[r.get("natureOfComplaint")] = 1
+            nature_by_count[r.get("natureOfComplaint")] = r.get("count")
+
+            # if nature_by_count.get(r.get("natureOfComplaint")):
+            #     nature_by_count[r.get("natureOfComplaint")] += 1
+            #     continue
+            # nature_by_count[r.get("natureOfComplaint")] = 1
         sorted_list_nature = [{"natureOfComplaint": k, "count": v} for k, v in nature_by_count.items()]
 
         sorted_list_nature.sort(key=self.sort_states, reverse=True)
@@ -761,10 +938,12 @@ class AreaChartView(APIView):
         # states_by_count = get_year_dict()
         for r in qs_2:
 
-            if defaulters_by_count.get(r.get("complaintIsAgainst")):
-                defaulters_by_count[r.get("complaintIsAgainst")] += 1
-                continue
-            defaulters_by_count[r.get("complaintIsAgainst")] = 1
+            defaulters_by_count[r.get("complaintIsAgainst")] = r.get("count")
+
+            # if defaulters_by_count.get(r.get("complaintIsAgainst")):
+            #     defaulters_by_count[r.get("complaintIsAgainst")] += 1
+            #     continue
+            # defaulters_by_count[r.get("complaintIsAgainst")] = 1
         sorted_list_defaulters = [{"complaintIsAgainst": k, "count": v} for k, v in defaulters_by_count.items()]
         sorted_list_defaulters.sort(key=self.sort_defaulters, reverse=True)
         context = dict()
@@ -838,10 +1017,12 @@ class BarChartView(APIView):
         # states_by_count = get_year_dict()
         for r in qs_2:
 
-            if states_by_count.get(r.get("state")):
-                states_by_count[r.get("state")] += 1
-                continue
-            states_by_count[r.get("state")] = 1
+            states_by_count[r.get("state")] = r.get("count")
+
+            # if states_by_count.get(r.get("state")):
+            #     states_by_count[r.get("state")] += 1
+            #     continue
+            # states_by_count[r.get("state")] = 1
         sorted_list_state = [{"state": k, "count": v} for k, v in states_by_count.items()]
         sorted_list_state.sort(key=self.sort_states, reverse=True)
         context = dict()

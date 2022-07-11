@@ -66,6 +66,7 @@ class Complainer(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateField(null=True)
+    anonymous = models.BooleanField(default=False)
     time = models.DateTimeField(auto_now_add=True, null=True)
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
@@ -79,6 +80,8 @@ class Complainer(models.Model):
         max_length=100, choices=NATURE,
         blank=False, null=True)
     complaint = models.TextField(max_length=10000, null=True)
+    images = models.ImageField(upload_to='images/', blank=True, null=True)
+    videos = models.FileField(upload_to='videos/',blank=True, null=True)
 
     def __str__(self):
         return self.firstname

@@ -5,9 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/images/IMG_20220312_151531785.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/IMG_20220312_151531785_8sdVsmd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/IMG_20220312_151531785_f9MVVhe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/amamdi_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/amamdi_2_U1FGEWo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/videos/Temperature_launch.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/migrations/0010_complainer_anonymous.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/migrations/0012_alter_complainer_images.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/migrations/0013_complainer_videos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/naijacomplainer/templates/images.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/amamdi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/amamdi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/complainer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complainer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/sqlformat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +62,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/accounts/views.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/index2.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/naijacomplainer/views.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/accounts/forms.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/accounts/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/complainer/settings.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/models.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/edit.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/empty.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/index2.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/templates/search.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/naijacomplainer/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/requirements.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/requirementscomplete.txt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
@@ -54,16 +90,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin/python3" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/amamdi/complainnigeriaherokuTestingResponsivenessdebugcopycopyredesignscaptchavideoimage/venv&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/naijacomplainer/templates" />
@@ -294,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631703037407</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added google login settings">
+      <created>1631704806822</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1631704806822</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -317,7 +358,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -62,6 +62,11 @@
 <!--                            {{ form.date }}-->
                             </div>
                             <div class="form-group last mb-3">
+                            <label class="col-sm-8 col-form-label" ><b>Hide First and Last Name:</b></label>
+                                  <input type="checkbox" name="anonymous" id="id_anonymous">
+                            <p style="text-align:center;color:black;">First and Last Name will not show in global search. They will only show here.</p>
+                            </div>
+                            <div class="form-group last mb-3">
                             <label class="col-sm-8 col-form-label"><b>First Name:</b></label>
                                 <input type="text" name="firstname" maxlength="100" required id="id_firstname" class="form-control" placeholder="Your Firstname" value="{{ complainer.firstname }}">
 <!--                            {{ form.firstname }}-->
@@ -74,7 +79,7 @@
                             <div class="form-group last mb-3">
                             <label class="col-sm-2 col-form-label"><b>State:</b></label>
                                 <select name="state" required id="id_state" class="form-control">
-  <option value=" " selected>{{ complainer.state }} (Make selection)</option>
+  <option value=" " selected>{{ complainer.state }} (Confirm selection in dropdown)</option>
 
   <option value="Abia">Abia</option>
 
@@ -156,7 +161,7 @@
                             <div class="form-group last mb-3">
                             <label class="col-sm-8 col-form-label one"><b>Complaint is Against:</b></label>
                                 <select name="complaintIsAgainst" required id="id_complaintIsAgainst" class="form-control" >
-  <option value=" " selected>{{ complainer.complaintIsAgainst }} (Make selection)</option>
+  <option value=" " selected>{{ complainer.complaintIsAgainst }} (Confirm selection in dropdown)</option>
 
   <option value="Federal Government">Federal Government</option>
 
@@ -176,7 +181,7 @@
                             <div class="form-group last mb-3">
                             <label class="col-sm-8 col-form-label one" style="margin-right:20px"><b>Nature of Complaint:</b></label>
                                 <select name="natureOfComplaint" required id="id_natureOfComplaint" class="form-control">
-  <option value=" " selected>{{ complainer.natureOfComplaint }} (Make selection)</option>
+  <option value=" " selected>{{ complainer.natureOfComplaint }} (Confirm selection in dropdown)</option>
 
   <option value="Delay of Service">Delay of Service</option>
 

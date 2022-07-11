@@ -14,6 +14,7 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 <style>
     *{margin-top: 0px !important;}
     #three:hover {color:black !important;}
@@ -57,13 +58,19 @@
                             <div class="text-center mb-5">
                                 <h3>Welcome {{ user.username }}, please make your complaint.</h3>
                             </div>
-                            <form method="POST" action="{% url 'index2' %}">
+                            	{% if msg %} {% autoescape off %} {{ msg }} {% endautoescape %} {% endif %}
+                            <form method="POST" action="{% url 'index2' %}" enctype="multipart/form-data">
                                 {% csrf_token %}
                             <div class="form-group first">
                             <label class="col-sm-2 col-form-label" ><b>Date:</b></label>
                                 <input type="date" name="date" required id="id_date" class="form-control" placeholder="Date format: Year-Month-Date E.g:2021-01-01">
                             <!--    <div class="col-sm-4">-->
 <!--                            {{ form.date }}-->
+                            </div>
+                            <div class="form-group last mb-3">
+                            <label class="col-sm-8 col-form-label" ><b>Hide First and Last Name:</b></label>
+                                  <input type="checkbox" name="anonymous" id="id_anonymous">
+                            <p style="text-align:center;color:black;">First and Last Name will not show in global search. They will only show here.</p>
                             </div>
                             <div class="form-group last mb-3">
                             <label class="col-sm-8 col-form-label"><b>First Name:</b></label>
@@ -203,10 +210,31 @@
                             </div>
                             <div class="form-group last mb-3">
                             <label class="col-sm-2 col-form-label one" ><b>Complaint:</b></label>
-                                <textarea name="complaint" cols="40" rows="10" maxlength="10000" required id="id_complaint" class="form-control" placeholder="Your Complaint">
+                            <textarea name="complaint" cols="40" rows="10" maxlength="10000" required id="id_complaint" class="form-control" placeholder="Your Complaint">
 </textarea>
 <!--                            {{ form.complaint }}-->
                             </div>
+
+
+                            <div class="form-group last mb-3">
+                            <label for="id_images" class="col-sm-8 col-form-label"><b>Images:</b></label>
+                            <input type="file" name="images" accept="media/images/" id="id_images">
+                            </div>
+
+<!--                            {% if img_obj %}-->
+<!--                            <h3>Successfully uploaded: {{ img_obj.title }}</h3>-->
+<!--                            <img src="{{ img_obj.image.url }}" alt="connect" style="max-height:300px">-->
+<!--                            {% endif %}-->
+
+                            <div class="form-group last mb-3">
+                            <label for="id_videos" class="col-sm-8 col-form-label"><b>Videos:</b></label>
+                            <input type="file" name="videos" accept="media/videos/" id="id_videos" autocomplete="off">
+                            </div>
+
+                            <div class="form-group last mb-3">
+                            <div class="g-recaptcha" data-sitekey='6Led1fcfAAAAAP3kO3H-JPXCihjnEp9vm5ILoE3n'></div>
+                            </div>
+
                             <div class="form-group last mb-3">
                             <label class="col-sm-1 col-form-label"></label>
                             <button type="submit" class="btn btn-block py-2 btn-primary" style="background-color:darkgreen;border:solid 2px aquamarine;color:white;" id="three">Submit</button>
@@ -236,6 +264,7 @@
         <th>Complaint is Against</th>
         <th>Nature of Complaint</th>
         <th>Complaint</th>
+        <th>Media</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -249,6 +278,20 @@
         <td>{{ list.complaintIsAgainst }}</td>
         <td>{{ list.natureOfComplaint }}</td>
         <td>{{ list.complaint }}</td>
+        <td>
+            <a href="{% url 'images' list.id %}" style="color:green;" class="four"/>Media</a>
+        </td>
+<!--        {% if list.images %}-->
+<!--        <td><img src="{{ list.images.url }}" alt="connect" style="max-height:300px"/></td>-->
+<!--        {% else %}-->
+<!--        <td><p>No image found</p></td>-->
+<!--        {% endif %}-->
+<!--        <td>if {{ list.images.urls }}</td> -->
+<!--        {% if complainer.images %}-->
+<!--        <td><img src="{{ complainer.images.url }}" alt="connect" style="max-height:300px"/></td>-->
+<!--        {% else %}-->
+<!--        <td><p>No image found</p></td>-->
+<!--        {% endif %}-->
         <td>
             <a href="{% url 'edit' list.id %}" style="color:green;" class="four"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
             <a href="{% url 'delete' list.id %}" style="color:green;" class="four">Delete</a>
@@ -274,6 +317,7 @@
         <th>Complaint is Against</th>
         <th>Nature of Complaint</th>
         <th>Complaint</th>
+        <th>Media</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -287,6 +331,14 @@
         <td>{{ result.complaintIsAgainst }}</td>
         <td>{{ result.natureOfComplaint }}</td>
         <td>{{ result.complaint }}</td>
+        <td><a href="{% url 'images' result.id %}" style="color:green;" class="four"/>Media</a></td>
+<!--        <td><img src="{{ result.images }}" alt="connect" style="max-height:300px"/></td>-->
+<!--        {% if result.images %}-->
+<!--        <td><img src="{{ result.images.url }}" alt="connect" style="max-height:300px"/></td>-->
+<!--        {% else %}-->
+<!--        <td><p>No image found</p></td>-->
+<!--        {% endif %}-->
+<!--        <td>{{ result.images }}</td>-->
          <td>
             <a href="{% url 'edit' result.id %}" style="color:green;" class="four"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
             <a href="{% url 'delete' result.id %}" style="color:green;" class="four">Delete</a>

@@ -21,7 +21,7 @@ from naijacomplainer import views
 from django.conf.urls.static import static
 from django.conf import settings
 # from accounts import views as account_views
-from naijacomplainer.views import HomeView, ComplaintsView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView, UserDelete
+from naijacomplainer.views import HomeView, ComplaintsView, ComplaintSearchView, get_data, ChartData, ChartData2, ChartData3, PieChartView, AreaChartView, BarChartView, UserDelete
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
@@ -38,6 +38,7 @@ urlpatterns = [
     path('index2/', views.emp, name="index2"),
     # path('dashboard/', views.dashboard),
     path('success/', views.success, name='success'),
+    path("images/<int:id>", views.images, name="images"),
     path('edit/<int:id>', views.edit, name="edit"),
     path('update/<int:id>', views.update, name="update"),
     path('delete/<int:id>', views.destroy, name="delete"),
@@ -47,6 +48,7 @@ urlpatterns = [
     # path('success/chart/filter-options/', views.get_filter_options, name='chart-filter-options'),
     path('success/chart/', HomeView.as_view(), name='chart'),
     path('complaintsummary/', ComplaintsView.as_view(), name='complaintsummary'),
+    path('search/', ComplaintSearchView.as_view(), name="search"),
     path("pie/", csrf_exempt(PieChartView.as_view()), name="pie_chart"),
     path("area/", AreaChartView.as_view(), name="area_chart"),
     path("bar/", BarChartView.as_view(), name="bar_chart"),
@@ -55,10 +57,15 @@ urlpatterns = [
     path('api/chart/data', ChartData.as_view(), name='chartdata'),
     path('api/chart2/data2', ChartData2.as_view(), name='chartdata2'),
     path('api/chart3/data3', ChartData3.as_view(), name='chartdata3'),
+    path('upload/', views.image_upload_view, name='upload'),
     # path('map/', views.map, name='map'),
     # path("search/", include("naijacomplainer.urls"), namespace=)
 ]
 
 
 if settings.DEBUG:
-    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

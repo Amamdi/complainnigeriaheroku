@@ -4,7 +4,7 @@ from .models import Complainer
 
 
 class ComplainerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'date', 'time', 'firstname', 'lastname', 'state', 'complaintIsAgainst', 'natureOfComplaint', 'complaint',)
+    list_display = ('user', 'date', 'anonymous', 'time', 'firstname', 'lastname', 'state', 'complaintIsAgainst', 'natureOfComplaint', 'complaint', 'images', 'videos')
 
 
 admin.site.site_header = "Complain Nigeria"

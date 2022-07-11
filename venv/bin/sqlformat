@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/amamdi/complainnigeriaherokuTestingResponsivenessdebug (copy)/venv/bin/python3" "$0" "$@"
-' '''
+#!/home/amamdi/complainnigeriaherokuTestingResponsivenessdebugcopycopyredesigns/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

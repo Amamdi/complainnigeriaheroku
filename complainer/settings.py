@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'whitenoise.runserver_nostatic',
+    'captcha'
 ]
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -170,6 +171,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/index2/'
@@ -210,6 +213,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XmnCiHqsdOx-JSVdaaM-4jdl'
 
 SOCIAL_AUTH_TWITTER_KEY = 'o9nurQjFw2N5vozpZ3sTMGm1C'
 SOCIAL_AUTH_TWITTER_SECRET = 'yrgolDutQ2m2t7VyYQmeOAIZ9bUVado6LCbKKkVzrV8DfaAEPx'
+
+GOOGLE_RECAPTCHA_SITE_KEY = '6Led1fcfAAAAAP3kO3H-JPXCihjnEp9vm5ILoE3n'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Led1fcfAAAAAO3VUibIbOiRrQVynzmTjExltqFt'
 
 # AUTHENTICATION_BACKENDS = ['django-dual-authentication.backends.DualAuthentication']
 
