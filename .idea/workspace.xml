@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="Hiding somethings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/complainer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/complainer/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657527972677</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Hiding somethings">
+      <created>1657531389605</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1657531389605</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -353,6 +358,7 @@
     <MESSAGE value="added complaintsummary and terms of use pages" />
     <MESSAGE value="added google login settings" />
     <MESSAGE value="Updates everywhere" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates everywhere" />
+    <MESSAGE value="Hiding somethings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hiding somethings" />
   </component>
 </project>
