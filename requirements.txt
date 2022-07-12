@@ -29,7 +29,7 @@ defer==1.0.4
 defusedxml==0.7.1
 distlib==0.3.4
 distro==1.7.0
-distro-info===1.0build1
+
 dj-database-url==0.5.0
 Django==4.0.4
 django-crispy-forms==1.12.0
