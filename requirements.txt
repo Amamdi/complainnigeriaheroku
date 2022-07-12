@@ -115,7 +115,7 @@ PyQtWebEngine==5.15.5
 pyRFC3339==1.1
 
 python-dateutil==2.8.1
-python-debian===0.1.43ubuntu1
+
 python-dotenv==0.19.0
 python3-openid==3.2.0
 pythran==0.10.0
@@ -141,7 +141,7 @@ sympy==1.9
 systemd-python==234
 texttable==1.6.4
 traitlets==5.1.1
-ubuntu-advantage-tools==27.9
+
 ubuntu-drivers-common==0.0.0
 ufoLib2==0.13.1
 ufw==0.36.1
