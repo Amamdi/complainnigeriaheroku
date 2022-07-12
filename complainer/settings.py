@@ -33,7 +33,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaheroku.herokuapp.com', 'http://127.0.0.1:8000/']
 
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'whitenoise.runserver_nostatic',
-    # 'captcha'
+    'captcha'
 ]
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
