@@ -97,27 +97,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
     </task>
-    <task id="LOCAL-00007" summary="Update">
-      <created>1629550999250</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1629550999251</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Update">
-      <created>1629551570099</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1629551570099</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Update">
-      <created>1629898310238</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1629898310238</updated>
-    </task>
     <task id="LOCAL-00010" summary="Update">
       <created>1629898836752</created>
       <option name="number" value="00010" />
@@ -440,7 +419,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657632430411</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657632580044</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1657632580044</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657632613831</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1657632613831</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657632753865</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1657632753865</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="UnknownFeatures">
