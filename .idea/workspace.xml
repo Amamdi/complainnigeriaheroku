@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/images/20161002_134842.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/IMG_20220312_151531785_5Qr4RHh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Temperature_launch_color.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/videos/New_Website_Launch.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/videos/Temperature_launch_color.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/videos/Temperature_launch_color_pwuinmJ.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/amamdi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/amamdi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="Hiding somethings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naijacomplainer/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/naijacomplainer/static/js/bootstrap.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657617722469</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Hiding somethings">
+      <created>1657620410663</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1657620410663</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="UnknownFeatures">
