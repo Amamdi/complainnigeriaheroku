@@ -95,13 +95,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
     </task>
-    <task id="LOCAL-00037" summary="Hiding somethings">
-      <created>1657617722468</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1657617722469</updated>
-    </task>
     <task id="LOCAL-00038" summary="Hiding somethings">
       <created>1657620410663</created>
       <option name="number" value="00038" />
@@ -438,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657648938725</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657649339009</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1657649339009</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="UnknownFeatures">
