@@ -157,6 +157,6 @@ webencodings==0.5.1
 WebOb==1.8.6
 whitenoise==5.3.0
 xdg==5
-xkit==0.0.0
+
 zeroconf==0.38.3
 zipp==1.0.0
