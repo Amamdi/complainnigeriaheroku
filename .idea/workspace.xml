@@ -97,27 +97,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
     </task>
-    <task id="LOCAL-00027" summary="added google login settings">
-      <created>1631702388387</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1631702388387</updated>
-    </task>
-    <task id="LOCAL-00028" summary="added google login settings">
-      <created>1631702756977</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1631702756977</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added google login settings">
-      <created>1631703037407</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1631703037407</updated>
-    </task>
     <task id="LOCAL-00030" summary="added google login settings">
       <created>1631704806822</created>
       <option name="number" value="00030" />
@@ -440,7 +419,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657637506737</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657637821730</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1657637821730</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657638008723</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1657638008723</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1657638099379</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1657638099379</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="UnknownFeatures">

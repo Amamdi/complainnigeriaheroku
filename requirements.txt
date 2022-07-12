@@ -142,7 +142,7 @@ systemd-python==234
 texttable==1.6.4
 traitlets==5.1.1
 
-ubuntu-drivers-common==0.0.0
+
 ufoLib2==0.13.1
 ufw==0.36.1
 unattended-upgrades==0.1
