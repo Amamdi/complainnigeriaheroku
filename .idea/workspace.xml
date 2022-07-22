@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8bdb9f6e-9286-47a7-9d0a-31c0621f590f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +22,32 @@
     <option name="BRANCH" value="github2/main" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="heroku/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -96,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Hiding somethings">
-      <created>1657626328898</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1657626328898</updated>
     </task>
     <task id="LOCAL-00045" summary="Hiding somethings">
       <created>1657626699094</created>
@@ -440,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658466615891</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Merge remote-tracking branch 'heroku/master'">
+      <created>1658481118711</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1658481118742</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -478,6 +502,7 @@
     <MESSAGE value="Hiding somethings" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Merge remote-tracking branch 'heroku/master'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'heroku/master'" />
   </component>
 </project>
