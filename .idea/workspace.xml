@@ -121,13 +121,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
     </task>
-    <task id="LOCAL-00045" summary="Hiding somethings">
-      <created>1657626699094</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1657626699095</updated>
-    </task>
     <task id="LOCAL-00046" summary="Hiding somethings">
       <created>1657626808274</created>
       <option name="number" value="00046" />
@@ -464,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658481118742</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Merge remote-tracking branch 'heroku/master'">
+      <created>1658481174906</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1658481174906</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="UnknownFeatures">
