@@ -134,13 +134,6 @@
       <option name="presentableId" value="Default" />
       <updated>1607949107881</updated>
     </task>
-    <task id="LOCAL-00055" summary="Merge remote-tracking branch 'origin/master'">
-      <created>1657632430410</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1657632430411</updated>
-    </task>
     <task id="LOCAL-00056" summary="Merge remote-tracking branch 'origin/master'">
       <created>1657632580044</created>
       <option name="number" value="00056" />
@@ -477,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658644036594</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Merge remote-tracking branch 'heroku/master'">
+      <created>1658645227243</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1658645227243</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="UnknownFeatures">
