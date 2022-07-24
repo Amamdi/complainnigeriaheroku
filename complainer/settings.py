@@ -33,7 +33,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaherokutwo.herokuapp.com', 'complainnigeriaheroku.herokuapp.com', 'http://127.0.0.1:8000/']
 
