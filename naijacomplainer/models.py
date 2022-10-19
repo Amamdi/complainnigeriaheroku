@@ -81,7 +81,7 @@ class Complainer(models.Model):
         blank=False, null=True)
     complaint = models.TextField(max_length=10000, null=True)
     images = models.ImageField(upload_to='images/', blank=True, null=True)
-    videos = models.FileField(upload_to='videos/',blank=True, null=True)
+    videos = models.FileField(upload_to='videos/', blank=True, null=True)
 
     def __str__(self):
         return self.firstname

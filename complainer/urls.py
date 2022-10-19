@@ -44,6 +44,7 @@ urlpatterns = [
     path('delete/<int:id>', views.destroy, name="delete"),
     path('<int:pk>/delete', UserDelete.as_view(), name='user_confirm_delete'),
     path('termsofuse/', views.termsofuse, name='terms'),
+    path('contactus/', views.contactus, name='contact'),
     path('search/', include('naijacomplainer.urls'), name="search"),
     # path('success/chart/filter-options/', views.get_filter_options, name='chart-filter-options'),
     path('success/chart/', HomeView.as_view(), name='chart'),

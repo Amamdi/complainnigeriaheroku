@@ -253,6 +253,10 @@ def termsofuse(request):
     return render(request, 'termsofuse.html')
 
 
+def contactus(request):
+    return render(request, 'contactus.html')
+
+
 def complaintsummary(request):
     return render(request, 'complaintsummary.html')
 

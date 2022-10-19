@@ -33,7 +33,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['testsite.com', 'localhost', '127.0.0.1', 'complainnigeriaherokutwo.herokuapp.com', 'complainnigeriaheroku.herokuapp.com', 'http://127.0.0.1:8000/']
 
@@ -115,9 +115,9 @@ WSGI_APPLICATION = 'complainer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'complainnigeria',
-        'USER': 'complainnigeriauser',
-        'PASSWORD': 'Ebit4life*',
+        'NAME': 'complainnigeriatwo',
+        'USER': 'complainnigeriatwouser',
+        'PASSWORD': '!!Ama1234x!!',
         'HOST': 'localhost',
         'PORT': '',
     }
